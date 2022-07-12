@@ -27,7 +27,7 @@ class AlimentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alimento.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class AlimentoController extends Controller
             'tipo' => $request->tipo,
             'user_id' => Auth::user()->id
         ]);
-        return redirect('dashboard');
+        return redirect('/dashboard');
     }
 
     /**
@@ -52,9 +52,10 @@ class AlimentoController extends Controller
      * @param  \App\Models\alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function show(alimento $alimento)
+    public function show($id)
     {
-        //
+        $alimento = alimento::findOrfail($id);
+        return view('alimento.show', ['alimento' => $alimento]);
     }
 
     /**
@@ -63,9 +64,10 @@ class AlimentoController extends Controller
      * @param  \App\Models\alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function edit(alimento $alimento)
+    public function edit($id)
     {
-        //
+        $alimento = alimento::findOrfail($id);
+        return view('editar.alimento', ['alimento' => $alimento]);
     }
 
     /**
@@ -75,9 +77,13 @@ class AlimentoController extends Controller
      * @param  \App\Models\alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, alimento $alimento)
+    public function update(Request $request, $alimento)
     {
-        //
+        $alimentoAlvo = alimento::findOrFail ($alimento);
+        $alimentoAlvo ->nome = $request ->nome;
+        $alimentoAlvo ->tipo = $request ->tipo;
+        $alimento->update();
+        return redirect('/dashboard');
     }
 
     /**

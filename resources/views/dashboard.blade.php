@@ -14,6 +14,16 @@
                             <tr>
                                 <td>{{$alimento->nome}}</td>
                                 <td>{{$alimento->tipo}}</td>
+                                <td><form action="/apagar-alimento/{{$alimento->id}}" method= "post">
+
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" name="apagar"> apagar </button>
+                                </form>
+                                </td>
+                                <td>
+                                <a href="/editar-alimento/{{$alimento-id}}" method="GET"> editar</a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
