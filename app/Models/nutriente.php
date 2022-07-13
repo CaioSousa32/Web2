@@ -17,7 +17,7 @@ class nutriente extends Model
         'fibras',
         'user_id'
     ];
-    public function donoDoNutriente() {
+    public function alimentos() {
         return $this->BelongsToMany(alimento::class, 'alimentonutriente');
     }
 }
