@@ -23,8 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::post('/add-alimento', [AlimentoController::class, 'store']);
-Route::get('/editar-alimento', [AlimentoController::class, 'edit']);
-Route::put('/update-alimento', [AlimentoController::class, 'update']);
-Route::delete('/apagar-alimento', [AlimentoController::class, 'destroy']);
+Route::get('/editar-alimento/{id}', [AlimentoController::class, 'edit']);
+Route::patch('/update-alimento/{id}', [AlimentoController::class, 'update'])->name('alimento.edit');
+Route::delete('/apagar-alimento/{id}', [AlimentoController::class, 'destroy']);
 
 require __DIR__.'/auth.php';

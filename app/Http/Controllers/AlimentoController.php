@@ -66,8 +66,8 @@ class AlimentoController extends Controller
      */
     public function edit($id)
     {
-        $alimento = alimento::findOrfail($id);
-        return view('editar.alimento', ['alimento' => $alimento]);
+        $alimento = alimento::findOrFail($id);
+        return view('editar-alimento', ['alimento' => $alimento]);
     }
 
     /**
@@ -82,7 +82,7 @@ class AlimentoController extends Controller
         $alimentoAlvo = alimento::findOrFail ($alimento);
         $alimentoAlvo ->nome = $request ->nome;
         $alimentoAlvo ->tipo = $request ->tipo;
-        $alimento->update();
+        $alimentoAlvo->update();
         return redirect('/dashboard');
     }
 
@@ -92,8 +92,9 @@ class AlimentoController extends Controller
      * @param  \App\Models\alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(alimento $alimento)
+    public function destroy($alimento)
     {
-        //
+        $alimento = alimento::findOrFail($alimento)->delete();
+        return redirect()->back();
     }
 }

@@ -22,7 +22,7 @@
                                 </form>
                                 </td>
                                 <td>
-                                <a href="/editar-alimento/{{$alimento-id}}" method="GET"> editar</a>
+                                <a href="/editar-alimento/{{$alimento->id}}" method="GET"> editar</a>
                                 </td>
                             </tr>
                         @endforeach
