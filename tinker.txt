@@ -1,0 +1,20 @@
+ 0: User::all()
+ 1: User::all()
+ 2: alimento::all()
+ 3: alimento::all()
+ 4: User::find(1)
+ 5: User::find(1)->alimentos
+ 6: User::find(1)->alimentos[0]
+ 7: User::find(1)->alimentos[0]->Alimento
+ 8: User::find(1)->alimentos[0]->Alimento
+ 9: User::find(1)->alimentos[0]->Alimento
+10: User::find(1)->alimentos[0]->nutrientes
+11: User::find(1)->alimentos[0]->nutrientes
+12: User::find(1)->alimentos[0]->nutrientes->attach(1)
+13: User::find(1)->alimentos[0]->nutrientes()->attach(1)
+14: User::find(1)->alimentos[0]->nutrientes
+15: User::find(1)->alimentos[0]->nutrientes
+16: User::find(1)->alimentos[0]->nutrientes()->attach(1)
+17: User::find(1)->alimentos[0]->nutrientes
+18: nutriente::all()
+19: nutriente::factory(1)->create()

@@ -18,6 +18,6 @@ class nutriente extends Model
         'user_id'
     ];
     public function donoDoNutriente() {
-        return $this->BelongsToMany(alimento::class, 'user_id');
+        return $this->BelongsToMany(alimento::class, 'alimentonutriente');
     }
 }
