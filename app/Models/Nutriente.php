@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class nutriente extends Model
+class Nutriente extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'carboidtatos',
+        'carboidratos',
         'proteinas',
         'agua',
         'vitaminas',
-        'fibras',
-        'user_id'
+        'fibras'
     ];
     public function alimentos() {
-        return $this->BelongsToMany(alimento::class, 'alimentonutriente');
+        return $this->BelongsToMany(Alimento::class, 'Alimentonutriente')->withTimestamps();
     }
 }

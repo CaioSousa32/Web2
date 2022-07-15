@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class alimento extends Model
+class Alimento extends Model
 {
     use HasFactory;
 
@@ -19,8 +19,8 @@ class alimento extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function nutriente() {
-        return $this->belongsToMany(nutriente::class, 'alimentonutrientes');
+    public function nutrientes() {
+        return $this->belongsToMany(Nutriente::class, 'Alimentonutriente')->withTimestamps();
     }
 
 }

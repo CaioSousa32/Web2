@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class alimentonutriente extends Pivot
+class Alimentonutriente extends Pivot
 {
 
     use HasFactory;
+
     protected $fillable = [
         'alimento_id',
         'nutriente_id', 
@@ -18,11 +19,11 @@ class alimentonutriente extends Pivot
 
     public function alimento()
     {
-        return $this->belongsTo(alimento::class);
+        return $this->belongsTo(Alimento::class);
     }
     public function nutriente()
     {
-        return $this->belongsTo(nutriente::class);
+        return $this->belongsTo(Nutriente::class);
     }
     
 }

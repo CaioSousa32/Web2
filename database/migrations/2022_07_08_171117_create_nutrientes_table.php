@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('nutrientes', function (Blueprint $table) {
             $table->id();
-            $table->string('caboidtatos');
+            $table->string('carboidratos');
             $table->string('proteinas');
             $table->string('agua');
             $table->string('vitaminas');

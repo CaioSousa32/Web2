@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Nutriente;
-use App\Models\User;
+use App\Models\Alimentonutriente;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class NutrienteSeeder extends Seeder
+class AlimentonutrienteSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +15,8 @@ class NutrienteSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 50; $i++) {
-            Nutriente::factory()->create(
-            );
+        for ($i = 0; $i < 20; $i++) {
+            Alimentonutriente::factory()->create();
         }
     }
 }

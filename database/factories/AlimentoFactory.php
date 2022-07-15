@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,8 @@ class AlimentoFactory extends Factory
         return [
             'nome' => $this->faker->name(),
             'tipo' => $this->faker->name(),
+            'user_id'=> User::all()->random()->id
+
         ];
     }
 }

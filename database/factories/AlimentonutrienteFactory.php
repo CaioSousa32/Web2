@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\alimento;
-use App\Models\nutriente;
+use App\Models\Alimento;
+use App\Models\Nutriente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\alimentonutriente>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Alimentonutriente>
  */
 class AlimentonutrienteFactory extends Factory
 {
@@ -19,8 +19,8 @@ class AlimentonutrienteFactory extends Factory
     public function definition()
     {
         return [
-            'alimento_id' => alimento::all()->random()->id,
-            'nutriente_id' => nutriente::all()->random()->id,
+            'alimento_id' => Alimento::all()->random()->id,
+            'nutriente_id' => Nutriente::all()->random()->id,
         ];
     }
 }

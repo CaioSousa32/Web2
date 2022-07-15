@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alimento;
 use App\Models\Nutriente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AlimentoController extends Controller
+class NutrienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class AlimentoController extends Controller
      */
     public function index()
     {
-        $alimentos = Alimento::all();
-        return view('/dashboard', compact('alimentos'));
+        $nutrientes = Nutriente::all();
+        return view('/dashboard', compact('nutrientes'));
     }
 
     /**
@@ -27,7 +26,7 @@ class AlimentoController extends Controller
      */
     public function create()
     {
-        return view('alimento.create');
+        return view('nutriente.create');
     }
 
     /**
@@ -38,7 +37,7 @@ class AlimentoController extends Controller
      */
     public function store(Request $request)
     {
-        Alimento::create([
+        Nutriente::create([
             'nome' => $request->nome,
             'tipo' => $request->tipo,
             'user_id' => Auth::user()->id
@@ -49,52 +48,53 @@ class AlimentoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Alimento  $Alimento
+     * @param  \App\Models\Nutriente  $Nutriente
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $Alimento = Alimento::findOrfail($id);
-        return view('alimento.show', ['alimento' => $Alimento]);
+        $Nutriente = Nutriente::findOrfail($id);
+        return view('nutriente.show', ['nutriente' => $Nutriente]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Alimento  $Alimento
+     * @param  \App\Models\Nutriente  $Nutriente
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $Alimento = Alimento::findOrFail($id);
-        return view('editar-alimento', ['alimento' => $Alimento]);
+        $Nutriente = Nutriente::findOrFail($id);
+        return view('editar-nutriente', ['nutriente' => $Nutriente]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Alimento  $Alimento
+     * @param  \App\Models\Nutriente  $Nutriente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $Alimento)
+    public function update(Request $request, $Nutriente)
     {
-        $AlimentoAlvo = Alimento::findOrFail ($Alimento);
-        $AlimentoAlvo ->nome = $request ->nome;
-        $AlimentoAlvo ->tipo = $request ->tipo;
-        $AlimentoAlvo->update();
+        $NutrienteAlvo = Nutriente::findOrFail ($Nutriente);
+        $NutrienteAlvo ->nome = $request ->nome;
+        $NutrienteAlvo ->tipo = $request ->tipo;
+        $NutrienteAlvo->update();
         return redirect('/dashboard');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Alimento  $alAlimentoimento
+     * @param  \App\Models\Nutriente  $Nutriente
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Alimento)
+    public function destroy($Nutriente)
     {
-        $Alimento = Alimento::findOrFail($Alimento)->delete();
+        $Nutriente = Nutriente::findOrFail($Nutriente)->delete();
         return redirect()->back();
     }
 }
+

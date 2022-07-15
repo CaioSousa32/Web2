@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\nutriente>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Nutriente>
  */
 class NutrienteFactory extends Factory
 {
@@ -17,10 +17,10 @@ class NutrienteFactory extends Factory
     public function definition()
     {
         return [
-            'carboidrato' => $this->faker->name(),
-            'proteina' => $this->faker->name(),
+            'carboidratos' => $this->faker->name(),
+            'proteinas' => $this->faker->name(),
             'agua' => $this->faker->name(),
-            'vitamina' => $this->faker->name(),
+            'vitaminas' => $this->faker->name(),
             'fibras' => $this->faker->name()
         ];
     }
