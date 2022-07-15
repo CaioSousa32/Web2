@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('alimentonutrientes', function (Blueprint $table) {
+        Schema::create('alimentonutriente', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->foreignId('alimento_id');

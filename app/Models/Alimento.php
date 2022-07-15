@@ -20,7 +20,7 @@ class Alimento extends Model
     }
 
     public function nutrientes() {
-        return $this->belongsToMany(Nutriente::class, 'Alimentonutriente')->withTimestamps();
+        return $this->belongsToMany(Nutriente::class, 'alimentonutriente')->withTimestamps();
     }
 
 }

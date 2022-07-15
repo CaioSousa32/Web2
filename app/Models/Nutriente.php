@@ -17,6 +17,6 @@ class Nutriente extends Model
         'fibras'
     ];
     public function alimentos() {
-        return $this->BelongsToMany(Alimento::class, 'Alimentonutriente')->withTimestamps();
+        return $this->BelongsToMany(Alimento::class, 'alimentonutriente')->withTimestamps();
     }
 }
